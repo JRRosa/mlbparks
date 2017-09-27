@@ -9,8 +9,6 @@
 
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
 
-        
-
         <style type="text/css">
             body {
                 padding: 0;
