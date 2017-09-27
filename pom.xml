@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ejemplo.app</groupId>
+  <artifactId>mlbparks</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>mlbparks</name>
+  <url>http://maven.apache.org</url>
+  
+  <developers>
+	<developer>
+		<name>Jorge Adalberto Reyes Rosa</name>
+		<email>jorgereyesrosa@gmail.com</email>
+	</developer>
+  </developers>
+  
+  <properties>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>  
+  
+  
+    <profiles>
+		<profile>
+            <id>local</id>
+            <build>
+                <finalName>mlbparks</finalName>
+                <plugins>
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <version>1.2.0.Alpha6</version>
+                        <configuration>
+                            <hostname>127.0.0.1</hostname>
+                            <port>9990</port>
+                            <username>root</username>
+                            <password>1234@</password>
+                            <name>mlbparks.war</name>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+	</profiles>
+  
+  <dependencies>
+  	<dependency>  
+  		<groupId>org.mongodb</groupId>
+  		<artifactId>mongo-java-driver</artifactId>
+  		<version>2.9.1</version>
+  	</dependency> 
+  
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.4</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+	    <groupId>javax</groupId>
+	    <artifactId>javaee-api</artifactId>
+	    <version>7.0</version>
+	    <scope>provided</scope>
+	</dependency>
+    
+  </dependencies>
+
+
+	
+</project>
